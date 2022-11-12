@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/estilo.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="conteudoDaPagina">
+        <div class="instrucoes">
+            <h2>Instruções de uso:</h2>
+            <ul>
+                <li>O usuário deverá escrever no primeiro campo um texto a ser codificado ou decodificado.</li>
+                <li>Logo após escrever o texto, escolher na caixa de seleção descrita como
+                     " Selecione uma opção , o tipo de codificação ou decodificação desejada.</li>
+                <li>*Se o utilizador optar pela opção "Cifra de César", uma nova caixa de diálogo irá aparecer
+                        logo ao lado, onde o utilizador então, irá decidir a chave secreta que
+                         será utilizada para cifrar e depois para decodificar a mensagem corretamente. </li>
+                <li>Logo abaixo o utilizador encontrará a opção em que decidirá se a sua mensagem será codificada ou decodificada,
+                     escolha de acordo a operação que desejar. Se a sua mensagem ainda não foi
+                      codificada escolha "Codificar" , já esteja codificada escolha decodificar 
+                      (Caso esteja utilizando a cifra de césar é necessário lembrar qual chave secreta
+                       foi utilizada para codificar a mensagem quando for decodificá-la).</li>
+                <li>Clique no botão "INICIAR" para receber a resposta.</li>
+            </ul>
+        </div>
+        <div class="container">
+        <h1 class="title">Coder/Encoder Base64</h1>
+            <form >
+                <textarea id="inputTexto" type="text" name="inputTexto"  placeholder="Texto a ser codificado" required></textarea>
+                <div class="metodos">
+                    <select class="seletorMetodo" id="seletorMetodo">
+                        <option disabled selected value="0">Selecione uma opção</option>
+                        <option id="base64" value="base64">Base64</option>
+                        <option id="cifra" value="cifra">Cifra de César</option>
+                    </select>
+                    <div class="incrementoDiv" id="incrementoDiv"> 
+                        <!-- <label for="incremento">Chave Secreta</label>
+                        <br> -->
+                        <input type="number" name="incremento" id="incremento" placeholder="Insira a Chave secreta" required>
+                    </div>
+                </div>
+                <br>   
+                <br>        
+                    <input id="seletorEncode" name="metodoRadio" type="radio" value="encode"/>
+                <label for="seletorEncode">Codificar</label>
+                    <br>           
+                    <input id="seletorDecode" name="metodoRadio" type="radio" value="decode"/>
+                <label for="seletorDecode">Decodificar</label>
+                <input id="submitBtn" type="submit" value="Iniciar" >
+                <h2>Resultado</h2>
+                    <p id="saida"></p>
+            </form>
+        </div>
+        <div class="sobre">
+            <div class="sobreBase64">
+                <h2>Sobre a Base<sub>64</sub></h2>
+                <p>Base64 é um método para codificação de dados para transferência na Internet (codificação MIME para transferência de conteúdo).
+                   É utilizado frequentemente para transmitir dados binários por meios de transmissão que lidam apenas com texto, como por exemplo
+                   para enviar arquivos anexos por e-mail.</p>
+                <!-- <p>É constituído por 64 caracteres ([A-Z],[a-z],[0-9], "/" e "+") que deram origem ao seu nome. O carácter "=" é utilizado como
+                   um sufixo especial e a especificação original (RFC 989) definiu que o símbolo "*" pode ser utilizado para delimitar dados
+                   convertidos, mas não criptografados, dentro de um stream.</p> -->
+                <ul><h3>Exemplo de Codificação</h3>
+                    <li>Texto original: Olá, mundo!</li>
+                    <li>Texto convertido para Base64: T2zDoSwgbXVuZG8h</li>
+                </ul>
+                <p>A codificação Base64 é frequentemente utilizada quando existe uma necessidade de transferência e armazenamento de dados binários
+                   para um dispositivo designado para trabalhar com dados textuais. Esta codificação é amplamente utilizada por aplicações em conjunto
+                   com a linguagem de marcação XML, possibilitando o armazenamento de dados binários em forma de texto.</p>
+                    <a href="https://pt.wikipedia.org/wiki/Base64" target="_self">Saiba Mais Clicando Aqui...</a>
+            </div>
+            <div class="sobreCifra">
+                <h2>Sobre a Cifra de César</h2>
+                <p>Em criptografia, a Cifra de César, também conhecida como cifra de troca, código de César ou troca de César, é uma das mais simples
+                   e conhecidas técnicas de criptografia. É um tipo de cifra de substituição na qual cada letra do texto é substituída por outra,
+                   que se apresenta no alfabeto abaixo dela um número fixo de vezes. Por exemplo, com uma troca de três posições, A seria substituído
+                   por D, B se tornaria E, e assim por diante. O nome do método é em homenagem a Júlio César, que o usou para se comunicar com os seus generais.</p>
+                   <!-- <p>O processo de criptografia de uma cifra de César é frequentemente incorporado como parte de esquemas mais complexos, como a cifra de Vigenère,
+                     e continua tendo aplicações modernas, como no sistema ROT13. Como todas as cifras de substituição monoalfabéticas, a cifra de César é facilmente
+                      decifrada e na prática não oferece essencialmente nenhuma segurança na comunicação.</p> -->
+                <ul><h3>Exemplo de codificação</h3>
+                    <p>A transformação pode ser representada alinhando-se dois alfabetos; o alfabeto cifrado é o alfabeto normal rotacionado à direita ou esquerda por um número de posições. Aqui está uma cifra de César usando uma rotação à esquerda de três posições (o parâmetro de troca, três neste caso, é usado como chave).</p>
+                    <li> Normal:  ABCDEFGHIJKLMNOPQRSTUVWXYZ</li>
+                    <li>Cifrado: DEFGHIJKLMNOPQRSTUVWXYZABC</li>
+                    <p>A cifra de César foi nomeada em homenagem a Júlio César que, segundo Suetónio, a usava com uma troca de três posições para proteger mensagens de significado militar.</p>
+                </ul>
+                <a href="https://pt.wikipedia.org/wiki/Cifra_de_César" target="_self">Saiba Mais Clicando Aqui...</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="rodaPe" >
+            <div  class="footerDiv">
+                <h4>Desenvolvido por:</h4>
+                <p>LuisDevLipe</p>
+                <p><em>12/11/2022</em></p>
+            </div>
+            <div  class="footerDiv">
+                <h4>Contato:</h4>
+                <div>
+                    <p>Whatsapp</p>
+                    <a href="https://wa.me/+5521965762671" target="_blank"><img src="./img/wppLogo.png"></a>
+                </div>
+                <div>
+                    <p>LinkedIn</p>
+                    <a href="https://www.linkedin.com/in/luis-felipe-3b35a3224/" target="_blank"><img src="./img/liLogo.png"></a>
+                </div>
+                <div>
+                    <p>Email</p>
+                    <a href="mailto:luisfelipebsj@gmail.com?subject="DensevolvimentoWEB/" target="_blank"><img src="./img/email.png"></a>
+                </div>
+            </div>
+            <div class="footerDiv">
+                <h4>Esta aplicação foi desenvolvida durante 2º módulo do curso de Desenvolvimento WEB Full-Stack através do programa <b><em>Programadores Cariocas</em></b>. Parceria da <b><em>Prefeitura do Estado do Rio de Janeiro</em></b> com o <b><em>Senac</em></b> e a <b><em>Resília</em></b></h4>
+                <p>Todos os Agradecimentos à equipe de apoio e ao corpo docente.</p>
+            </div>
+        </div>
+    </footer>
+
+<script src="./style/scrypt/script_commented.js"></script>
+</body>
+</html>

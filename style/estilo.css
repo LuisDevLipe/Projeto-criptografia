@@ -1,0 +1,231 @@
+:root {
+    --primary-color:aqua;
+    --secondary-color:#f7f7f7;
+    --tertiary-color:#414a4c;
+    --quarternary-color:blue;
+}
+
+*{
+    margin:0;
+    padding:0;
+    border-block:none;
+    text-decoration-style: none;
+}
+
+body {
+    /* background-color:var(--primary-color); */
+    background:#dfe2ec;
+}
+.container {
+    min-height:650px;
+    max-height:max-content;
+    width:400px;
+    /* background:var(--secondary-color); */
+    background:#dfe2ec;;
+    border-radius:15px;
+    border:2px solid var(--tertiary-color);
+    margin:75px auto;
+    box-shadow:  -20px -20px 60px #bec0c9,
+                    20px 20px 60px #ffffff;
+}
+.title {
+    text-align:center;
+    padding-top:10px;
+    padding-bottom:10px;
+    background-color:var(--quarternary-color);
+    border-radius: 15px;
+    border:2px solid var(--secondary-color);
+}
+
+form {
+    padding-left:20px;
+    padding-right:20px;
+}
+
+#inputTexto {
+    height:50px;
+    width:320px;
+    color:lightgrey;
+    padding:20px;
+    margin:50px auto; 
+    border:2px solid var(--tertiary-color);
+    border-radius:16px;
+}
+
+#inputTexto:focus {
+    border:2px dashed tomato;
+    background:black;
+    color:dimgrey;
+    border-radius:16px;
+    transition:0.3s;
+}
+#inputTexto:hover {
+    border:2px dashed tomato;
+    background:black;
+    color:dimgrey;
+    border-radius:16px;
+    transition:0.3s;
+}
+.metodos {
+    display:flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: start;
+}
+.seletorMetodo {
+    padding:3px;
+    height:30px;
+    width:160px;
+    border:2px solid var(--tertiary-color);
+    border-radius:16px;
+}
+/* chave secreta  */
+
+.incrementoDiv {
+    display:none;
+}
+#incremento {
+    padding:3px;
+    height:20px;
+    width:160px;
+    border:2px solid var(--tertiary-color);
+    border-radius:16px;
+    color:tomato;
+
+}
+#saida {
+    overflow-wrap: break-word;
+}
+
+#submitBtn {
+    display:block;
+    width:180px;
+    height:55px;
+    background:var(--quarternary-color); 
+    border:2px solid var(--tertiary-color);
+    border-top-left-radius:20px;
+    border-top-right-radius:5px;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:20px;
+    font-size:2em;
+    text-transform:uppercase;
+    margin:50px auto;
+
+}
+    #submitBtn:hover {
+        cursor:pointer;
+        background:linear-gradient(#cd7672 ,#eeb462 );
+        border:2px solid var(--secondary-color);
+        transition:1s;
+}
+
+
+
+/* estilização das divisões de instruçaõ , sobreBase64 e sobreCifra de cesar */
+
+
+.conteudoDaPagina {
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin:20px 15px
+}
+li {
+    list-style-type:disc;
+    list-style-position:initial;
+}
+
+.instrucoes {
+    text-align:justify;
+    padding:20px;
+    background:rgba(255,255,255, 0.4);
+    width:300px;
+    height:450px;
+    border-radius: 25px;
+    font-size: 0.8em;
+    font-family:arial;
+    font-weight: bold;
+    box-shadow: 5px 5px 4px #bec0c9;
+    /* line-height: 1.4em; */
+}
+.instrucoes > ul > li {
+    margin-top:10px;
+}
+.sobre{
+    line-height: 1.1em;
+    padding:15px;
+    background:rgba(255,255,255, 0.4);
+    border-radius:25px;
+    border:1px solid dimgray
+}
+h3 {
+    margin:10px;
+}
+a {
+    color:var(--quarternary-color);
+    text-decoration: none;
+    font-style: italic;
+    
+}
+.sobreBase64 {
+    text-align:left;
+    padding:20px;
+    background:rgba(255,255,255, 0.4);
+    width:300px;
+    height:300px;
+    border-radius: 25px;
+    font-size: 0.6em;
+    font-family:arial;
+    box-shadow: 5px 5px 4px #bec0c9;
+    margin-bottom:15px;
+    
+}
+.sobreBase64 > ul > li {
+    margin-top:5px;
+    list-style-position:inside;
+}
+.sobreCifra {
+    text-align:left;
+    padding:20px;
+    background:rgba(255,255,255, 0.4);
+    width:300px;
+    height:390px;
+    border-radius: 25px;
+    font-size: 0.6em;
+    font-family:arial;
+    box-shadow: 5px 5px 4px #bec0c9;
+    /* margin-bottom:15px; */
+}
+.sobreCifra > ul > li {
+    margin-top:5px;
+    list-style-position:inside;
+}
+
+
+
+
+/* /////roda pe //////// */
+ .rodaPe {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    color:#bec0c9;
+    padding:30px;
+    background:var(--quarternary-color);
+    margin-top:100px;
+    font-size:0.8em;
+    /* position: fixed; */
+    
+ }
+ img {
+    height: 20px;
+    width:20px;
+ }
+.footerDiv {
+    text-align: center;
+    width:350px;
+}
